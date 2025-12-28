@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
+  get :logged_in, to: "sessions#logged_in"
+  delete :logout, to: "sessions#destroy"
   root "static#home"
 end

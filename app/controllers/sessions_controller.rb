@@ -9,4 +9,17 @@ class SessionsController < ApplicationController
       render json: { status: 401 }
     end
   end
+
+  def logged_in
+    if @current_user
+      render json: { logged_in: true, user: current_user }
+    else
+      render json: { logged_in: false }
+    end
+  end
+
+  def destroy
+    reset_session
+    render json: { status: :logged_out }
+  end
 end
