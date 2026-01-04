@@ -65,5 +65,5 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "bcrypt", "~> 3.1", ">= 3.1.20"
+gem "bcrypt", "~> 3.1"
 gem "rack-cors", require: "rack/cors"
